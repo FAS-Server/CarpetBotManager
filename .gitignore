@@ -1,0 +1,4 @@
+minecraft_data_api/
+.idea/
+.vscode/
+bot_manager/__pycache__/
