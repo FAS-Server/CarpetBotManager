@@ -1,4 +1,5 @@
 minecraft_data_api/
 .idea/
 .vscode/
-bot_manager/__pycache__/
+carpet_bot_manager/__pycache__/
+*.mcdr

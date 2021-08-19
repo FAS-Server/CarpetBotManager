@@ -1,17 +1,20 @@
 {
-    "id": "bot_manager",
-    "version": "0.1.0",
-    "name": "BotManager",
+    "id": "carpet_bot_manager",
+    "version": "0.2.0-alpha.1",
+    "name": "Carpet Bot Manager",
     "description": {
-        "en_us": "An bot manage plugin designed for carpet mod and carpet-tis-addition",
-        "zh_cn": "一个bot管理插件，可以点击召唤bot并让其执行系列动作"
+        "en_us": "A carpet bot manage plugin, able to spawn bot and make it execute actions",
+        "zh_cn": "一个地毯端bot管理插件，可以点击召唤bot并让其执行系列动作"
     },
     "author": [
         "YehowahLiu"
     ],
     "link": "https://github.com/FAS-Server/BotManager",
     "dependencies": {
-        "mcdreforged": ">=2.0.0-beta.3",
+        "mcdreforged": ">=2.0.0",
         "minecraft_data_api": ">=1.4.0"
-    }
+    },
+    "resource": [
+        "lang"
+    ]
 }

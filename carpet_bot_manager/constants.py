@@ -3,6 +3,9 @@ import re
 from mcdreforged.api.rtext import RColor
 
 Prefix = '!!bot'
+Prefix2 = '!!player'
+plugin_id = 'carpet_bot_manager'
+
 bot_name_color = {
     True: RColor.green,
     False: RColor.gray
@@ -24,25 +27,6 @@ dim_convert = {
     0: 'minecraft:overworld',
     -1: 'minecraft:the_nether',
     1: 'minecraft:the_end'
-}
-
-default_config = {
-    'debug': False,
-    'bots': {
-        'bot_test': {
-            'pos': [0, 128, 0],
-            'dim': 0,
-            'rotation': [0, 0],
-            'actions': [
-                'move forward',
-                'use interval 15'
-            ],
-            'desc': 'Nothing here'
-        }
-    },
-    'page_len': 15,
-    'removePrefix': True,  # 是否在生成bot时去除其bot_前缀, 配合carpet-tis-addition使用
-    'removeSuffix': False  # 是否在生成bot时去除其_fake后缀, 配合carpet-tis-addition使用
 }
 
 bot_conf_default = {
