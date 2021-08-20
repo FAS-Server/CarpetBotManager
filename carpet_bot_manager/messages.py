@@ -25,7 +25,12 @@ def _convent_command(raw: Union[str, RTextBase]):
         match = re.search(r'(?<=§7)' + f'({constants.Prefix}|{constants.Prefix2})' + r'[\S ]*?(?=§)', line)
         if match is not None and symbol != 2:
             result.append(
-                RText(line).c(RAction.suggest_command, match.group()).h(_tr('click_to_fill', match.group())))
+                RText(line).c(
+                    RAction.suggest_command, match.group()
+                ).h(
+                    _tr('click_to_fill', match.group())
+                )
+            )
             symbol = 1
         else:
             result.append(line)

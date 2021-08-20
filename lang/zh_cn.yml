@@ -20,10 +20,10 @@ carpet_bot_manager.help.general: |
   §a[示例]§r
   {prefix2} test spawn 添加名为test的假人, 将根据配置自动添加前后缀
   {prefix2} bot_test jump once 为假人bot_test添加跳跃一次的动作
-  !!bot spawn bot_test 召唤假人bot_test
-  !!bot action bot_test exec 让假人bot_test执行动作, 如果未被召唤则先进行召唤
-  !!bot kill bot_test 让假人bot_test下线
-  !!bot del bot_test 删除假人bot_test
+  {prefix} spawn bot_test 召唤假人bot_test
+  {prefix} action bot_test exec 让假人bot_test执行动作, 如果未被召唤则先进行召唤
+  {prefix} kill bot_test 让假人bot_test下线
+  {prefix} del bot_test 删除假人bot_test
 carpet_bot_manager.help.summary: '管理 carpet 假人'
 carpet_bot_manager.help.action: |
   §7{prefix} action§r 显示这条帮助
