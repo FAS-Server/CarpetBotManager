@@ -205,5 +205,6 @@ class BotManager:
         bot.info(src)
 
     def check_action_limit(self, bot_name):
+        bot_name = bot_name.lower()
         action_length = len(self.bots.get(bot_name).actions)
         return action_length < 10

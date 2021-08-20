@@ -10,9 +10,9 @@ from carpet_bot_manager.messages import Message
 
 class BotConfig(Serializable):
     desc: str = Message.Description.default
-    pos: List[int] = [0, 0, 0]
+    pos: List[float] = [0, 0, 0]
     dim: int = 0
-    rotation: List[int] = [0, 0]
+    rotation: List[float] = [0, 0]
     actions: List[str] = []
 
 
