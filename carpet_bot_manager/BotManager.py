@@ -10,7 +10,7 @@ from carpet_bot_manager.bot import Bot, BotConfig
 
 import minecraft_data_api as api
 
-from carpet_bot_manager.messages import Message
+from carpet_bot_manager.messages import tr
 
 
 def query_player_info(src: PlayerCommandSource) -> tuple:
@@ -41,7 +41,7 @@ class BotManager:
 
     @property
     def bots_in_list(self):
-        return map(lambda s: s.lower(), self.bots.keys())
+        return [i.lower() for i in self.bots]
 
     def __debug(self, msg: str):
         return self.sever.logger.debug(msg, no_check=self.config.debug)
@@ -74,10 +74,10 @@ class BotManager:
         self.__debug('add_bot@bot_manager')
         bot_name = bot_name.lower()
         if position is not None:
-            src.reply(Message.Help.unfinished_function)  # TODO 接收玩家指定的位置参数
+            src.reply(tr('help.unfinished_function'))  # TODO 接收玩家指定的位置参数
         else:
             if not isinstance(src, PlayerCommandSource):
-                src.reply(Message.Command.add_bot_by_console_no_detail)
+                src.reply(tr('command.add_bot_by_console_no_detail'))
             else:
                 bot_name = self.config.name_prefix + bot_name + self.config.name_suffix
                 self.__debug('do the bot add')
@@ -95,12 +95,12 @@ class BotManager:
         self.config.bots.pop(bot_name)
         self.sever.save_config_simple(config=self.config)
         self.setup()
-        src.reply(Message.BotList.deleted)
+        src.reply(tr('bot_list.deleted', bot_name))
 
     def add_action(self, src: CommandSource, bot_name: str, action: str):
         bot_name = bot_name.lower()
         self.bots[bot_name].add_action(action)
-        src.reply(Message.Action.added(bot=bot_name, action=action))
+        src.reply(tr('action.added', bot=bot_name, action=action))
         self.sever.save_config_simple(config=self.config)
 
 
@@ -135,16 +135,16 @@ class BotManager:
 
         left_link: RText
         if page <= 1:
-            left_link = RText('<<<', color=link_color[False]).h(Message.BotList.no_more_page[::-1])
+            left_link = RText('<<<', color=link_color[False]).h(tr('bot_list.no_more_page')[::-1])
         else:
-            left_link = RText('<<<', color=link_color[True]).h(Message.BotList.prev_page)\
+            left_link = RText('<<<', color=link_color[True]).h(tr('bot_list.prev_page'))\
                 .c(RAction.run_command, Prefix + ' list ' + str(page - 1))
 
         right_link: RText
         if page >= max_page:
-            right_link = RText('>>>', color=link_color[False]).h(Message.BotList.no_more_page)
+            right_link = RText('>>>', color=link_color[False]).h(tr('bot_list.no_more_page'))
         else:
-            right_link = RText('>>>', color=link_color[True]).h(Message.BotList.next_page) \
+            right_link = RText('>>>', color=link_color[True]).h(tr('bot_list.next_page')) \
                 .c(RAction.run_command, Prefix + ' list ' + str(page + 1))
 
         footer = RTextList(
@@ -153,7 +153,7 @@ class BotManager:
             right_link
         )
         if left == right:
-            src.reply(Message.BotList.empty)
+            src.reply(tr('bot_list.empty'))
         else:
             src.reply(footer)
 
@@ -164,7 +164,7 @@ class BotManager:
     def clear_action(self, src: CommandSource, bot_name: str):
         bot_name = bot_name.lower()
         self.bots[bot_name].clear_action()
-        src.reply(Message.Action.cleared(bot=bot_name))
+        src.reply(tr('action.cleared', bot=bot_name))
         self.sever.save_config_simple(config=self.config)
 
     def check_list(self, player: str,  for_spawn: Optional[bool] = False) -> bool:
@@ -197,7 +197,7 @@ class BotManager:
         bot = self.bots[bot_name]
         bot.desc = desc
         self.sever.save_config_simple(config=self.config)
-        src.reply(Message.Description.changed(bot_name, desc=desc))
+        src.reply(tr('description.changed', bot_name, desc=desc))
 
     def info_bots(self, src: CommandSource, bot_name: str):
         bot_name = bot_name.lower()

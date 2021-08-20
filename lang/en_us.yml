@@ -24,51 +24,50 @@ carpet_bot_manager.help.general: |
   {prefix} action bot_test exec 让假人bot_test执行动作, 如果未被召唤则先进行召唤
   {prefix} kill bot_test 让假人bot_test下线
   {prefix} del bot_test 删除假人bot_test
-carpet_bot_manager.help.summary: '管理 carpet 假人'
+carpet_bot_manager.help.summary: 管理 carpet 假人
 carpet_bot_manager.help.action: |
   §7{prefix} action§r 显示这条帮助
   §7{prefix} action <bot>§r 列出该假人所有动作
   §7{prefix} action <bot> clear§r 清空假人动作
   如需添加假人动作, 请使用{prefix2}指令
-carpet_bot_manager.help.unfinished_function: '未完工, 快去催作者写'
+carpet_bot_manager.help.unfinished_function: 未完工, 快去催作者写
 
-carpet_bot_manager.command.unknown_argument: '未知的指令! 点此查看帮助'
-carpet_bot_manager.command.unknown_bot: '该假人不存在! 点此查看假人列表'
-carpet_bot_manager.command.duplicated_bot: '该假人已存在!'
-carpet_bot_manager.command.bot_name_required: '未提供假人名称! 点击查看假人列表'
-carpet_bot_manager.command.unfinished: '不完整的指令! 点此查看帮助'
-carpet_bot_manager.command.add_bot_by_console_no_detail: '运维鬼才请告诉我添加bot的位置= ='
-carpet_bot_manager.command.wrong_action: '要添加的动作不正确!'
-carpet_bot_manager.command.action_too_much: '动作列表已达上限!'
-carpet_bot_manager.command.spawn_by_console: '后台不可召唤bot!'
+carpet_bot_manager.command.unknown_argument: 未知的指令! 点此查看帮助
+carpet_bot_manager.command.unknown_bot: 该假人不存在! 点此查看假人列表
+carpet_bot_manager.command.duplicated_bot: 该假人已存在!
+carpet_bot_manager.command.bot_name_required: 未提供假人名称! 点击查看假人列表
+carpet_bot_manager.command.unfinished: 不完整的指令! 点此查看帮助
+carpet_bot_manager.command.add_bot_by_console_no_detail: 运维鬼才请告诉我添加bot的位置= =
+carpet_bot_manager.command.wrong_action: 要添加的动作不正确!
+carpet_bot_manager.command.action_too_much: 动作列表已达上限!
+carpet_bot_manager.command.spawn_by_console: 后台不可召唤bot!
 
-carpet_bot_manager.click_to_fill: '点击以填入§7{0}§r'
+carpet_bot_manager.click_to_fill: "点击以填入§7{0}§r"
 
-carpet_bot_manager.description.title: '描述信息'
-carpet_bot_manager.description.default: '这里空空的~'
-carpet_bot_manager.description.changed: '{bot}的描述信息已被更新为{desc}'
+carpet_bot_manager.description.title: 描述信息
+carpet_bot_manager.description.changed: "{bot}的描述信息已被更新为{desc}"
 
-carpet_bot_manager.bot_list.title: '==== 可用假人列表 ===='
-carpet_bot_manager.bot_list.next_page: '下一页'
-carpet_bot_manager.bot_list.prev_page: '下一页'
-carpet_bot_manager.bot_list.empty: '这里空荡荡的~'
-carpet_bot_manager.bot_list.no_more_page: '抵达了世界尽头~'
-carpet_bot_manager.bot_list.deleted: '已删除假人{0}'
-carpet_bot_manager.bot_list.pre_spawn: '召唤假人{0}中~'
-carpet_bot_manager.bot_list.pre_kill: '清除假人{0}中~'
+carpet_bot_manager.bot_list.title: ==== 可用假人列表 ====
+carpet_bot_manager.bot_list.next_page: 下一页
+carpet_bot_manager.bot_list.prev_page: 上一页
+carpet_bot_manager.bot_list.empty: 这里空荡荡的~
+carpet_bot_manager.bot_list.no_more_page: 抵达了世界尽头~
+carpet_bot_manager.bot_list.deleted: "已删除假人{0}"
+carpet_bot_manager.bot_list.pre_spawn: "召唤假人{0}中~"
+carpet_bot_manager.bot_list.pre_kill: "清除假人{0}中~"
 
-carpet_bot_manager.button.spawn: '点击上线'
-carpet_bot_manager.button.kill: '点击下线'
-carpet_bot_manager.button.exec: '点击执行预设动作'
-carpet_bot_manager.button.delete: '点击删除'
-carpet_bot_manager.button.spawn_exec: '点击上线并执行预设动作'
-carpet_bot_manager.button.action_add: '点击添加动作'
-carpet_bot_manager.button.action_clear: '点击清空动作'
-carpet_bot_manager.button.edit: '点击修改'
+carpet_bot_manager.button.spawn: 点击上线
+carpet_bot_manager.button.kill: 点击下线
+carpet_bot_manager.button.exec: 点击执行预设动作
+carpet_bot_manager.button.delete: 点击删除
+carpet_bot_manager.button.spawn_exec: 点击上线并执行预设动作
+carpet_bot_manager.button.action_add: 点击添加动作
+carpet_bot_manager.button.action_clear: 点击清空动作
+carpet_bot_manager.button.edit: 点击修改
 
-carpet_bot_manager.action.title: '预设动作列表'
-carpet_bot_manager.action.added: '已为假人{bot}的添加动作{action}!'
-carpet_bot_manager.action.cleared: '假人{0}的动作已被清空!'
-carpet_bot_manager.action.empty: '假人{0}无预设动作!'
-carpet_bot_manager.action.executing: '执行预设动作中~'
-carpet_bot_manager.action.execute_done: '完工力(•̀ω•́)'
+carpet_bot_manager.action.title: 预设动作列表
+carpet_bot_manager.action.added: "已为假人{bot}的添加动作{action}!"
+carpet_bot_manager.action.cleared: "假人{0}的动作已被清空!"
+carpet_bot_manager.action.empty: "假人{0}无预设动作!"
+carpet_bot_manager.action.executing: 执行预设动作中~
+carpet_bot_manager.action.execute_done: 完工力(•̀ω•́)

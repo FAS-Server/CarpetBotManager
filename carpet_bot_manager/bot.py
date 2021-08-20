@@ -5,11 +5,11 @@ from mcdreforged.api.rtext import RText, RTextList, RColor, RAction, RTextTransl
 from mcdreforged.api.utils import Serializable
 
 from carpet_bot_manager import constants
-from carpet_bot_manager.messages import Message
+from carpet_bot_manager.messages import tr
 
 
 class BotConfig(Serializable):
-    desc: str = Message.Description.default
+    desc: str = 'Nothing here.'
     pos: List[float] = [0, 0, 0]
     dim: int = 0
     rotation: List[float] = [0, 0]
@@ -77,9 +77,9 @@ class Bot:
     def spawn(self, src: CommandSource):
         # 'execute as {} run player {} spawn at {} {} {} facing {} {} in {}'
         if not isinstance(src, PlayerCommandSource):
-            src.reply(Message.Command.spawn_by_console)
+            src.reply(tr('command.spawn_by_console'))
             return
-        src.reply(Message.BotList.pre_spawn(self.name))
+        src.reply(tr('bot_list.pre_spawn', self.name))
         self.__server.execute(
             f'execute as {src.player} run '
             f'player {self._spawn_name}'
@@ -89,7 +89,7 @@ class Bot:
         )
 
     def kill(self, src: CommandSource):
-        src.reply(Message.BotList.pre_kill(self.name))
+        src.reply(tr('bot_list.pre_kill', self.name))
         self.__server.execute(
             f'player {self.name} kill'
         )
@@ -98,40 +98,40 @@ class Bot:
         if not self.online:
             self.spawn(src)
         cmd_prefix = f'player {self.name} '
-        src.reply(Message.Action.executing)
+        src.reply(tr('action.executing'))
         if len(self.actions) > 0:
             for action in self.actions.copy():
                 src.reply('  ' + action)
                 self.__server.execute(cmd_prefix + action)
-            src.reply(Message.Action.execute_done)
+            src.reply(tr('action.execute_done'))
         else:
-            src.reply(Message.Action.empty(self.name))
+            src.reply(tr('action.empty', self.name))
 
     def info(self, src: CommandSource, with_detail: Optional[bool] = True):
         bot_operation = {
             True: RTextList(
-                RText('[↓]', color=RColor.yellow).h(Message.Button.kill).c(
+                RText('[↓]', color=RColor.yellow).h(tr('button.kill')).c(
                     RAction.run_command, f'{constants.Prefix} kill {self.name}'
                 ),
                 ' ',
-                RText('[▶]', color=RColor.blue).h(Message.Button.exec).c(
+                RText('[▶]', color=RColor.blue).h(tr('button.exec')).c(
                     RAction.run_command, f'{constants.Prefix} action {self.name} exec'
                 ),
                 ' ',
-                RText('[x]', color=RColor.red).h(Message.Button.delete).c(
+                RText('[x]', color=RColor.red).h(tr('button.delete')).c(
                     RAction.suggest_command, f'{constants.Prefix} del {self.name}'
                 )
             ),
             False: RTextList(
-                RText('[↑]', color=RColor.green).h(Message.Button.spawn).c(
+                RText('[↑]', color=RColor.green).h(tr('button.spawn')).c(
                     RAction.run_command, f'{constants.Prefix} spawn {self.name}'
                 ),
                 ' ',
-                RText('[▶]', color=RColor.blue).h(Message.Button.spawn_exec).c(
+                RText('[▶]', color=RColor.blue).h(tr('button.spawn_exec')).c(
                     RAction.run_command, f'{constants.Prefix} action {self.name} exec'
                 ),
                 ' ',
-                RText('[x]', color=RColor.red).h(Message.Button.delete).c(
+                RText('[x]', color=RColor.red).h(tr('button.delete')).c(
                     RAction.suggest_command, f'{constants.Prefix} del {self.name}'
                 )
             )
@@ -147,9 +147,9 @@ class Bot:
         src.reply(info)
         if with_detail:
             desc_text = RTextList(
-                RText(Message.Description.title, color=RColor.gray),
+                RText(tr('description.title'), color=RColor.gray),
                 RText(':     '),
-                RText('✐', color=RColor.green).h(Message.Button.edit).c(
+                RText('✐', color=RColor.green).h(tr('button.edit')).c(
                     RAction.suggest_command, f'{constants.Prefix} desc {self.name} <desc>'
                 ),
                 '\n',
@@ -163,15 +163,15 @@ class Bot:
 
     def list_action(self, src: CommandSource):
         action_text = RTextList(
-            RText(Message.Action.title, color=RColor.gray),
+            RText(tr('action.title'), color=RColor.gray),
             '\n  - ',
             '\n  - '.join(self.actions),
             '\n  - ',
-            RText('[+]', color=RColor.green).h(Message.Button.action_add).c(
+            RText('[+]', color=RColor.green).h(tr('button.action_add')).c(
                 RAction.suggest_command, f'!!player {self.name} <action> '
             ),
             ' ',
-            RText('[x]', color=RColor.red).h(Message.Button.action_clear).c(
+            RText('[x]', color=RColor.red).h(tr('button.action_clear')).c(
                 RAction.suggest_command, f'{constants.Prefix} action {self.name} clear'
             )
         )
