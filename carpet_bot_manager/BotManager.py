@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Dict, Optional
 
 from mcdreforged.api.types import PluginServerInterface, CommandSource, PlayerCommandSource
 from mcdreforged.api.decorator import new_thread
@@ -25,15 +25,15 @@ def query_player_info(src: PlayerCommandSource) -> tuple:
 
 class Config(Serializable):
     debug: bool = False
-    bots: dict[str, BotConfig] = {}
-    name_prefix = 'bot_'
-    name_suffix = ''
+    bots: Dict[str, BotConfig] = {}
+    name_prefix: str = 'bot_'
+    name_suffix: str = ''
     page_len: int = 15
 
 
 class BotManager:
     def __init__(self, server: PluginServerInterface, config: Config):
-        self.bots: dict[str, Bot] = {}
+        self.bots: Dict[str, Bot] = {}
         self.sever = server
         self.config = config
         self.sever.logger.info(f'debug:{self.config.debug}')
@@ -86,6 +86,7 @@ class BotManager:
                 conf['pos'], conf['rotation'], conf['dim'] = query_player_info(src)
                 bot_conf = BotConfig.deserialize(conf)
                 self.config.bots[bot_name] = bot_conf
+                self.__debug(f'save up config:{str(self.config.serialize())}')
                 self.sever.save_config_simple(config=self.config)
                 self.bots[bot_name] = Bot(bot_name, bot_conf, src.get_server())
 

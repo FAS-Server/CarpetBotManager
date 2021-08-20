@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional
 
 from mcdreforged.api.types import ServerInterface, CommandSource, PlayerCommandSource
 from mcdreforged.api.rtext import RText, RTextList, RColor, RAction, RTextTranslation
@@ -10,10 +10,10 @@ from carpet_bot_manager.messages import Message
 
 class BotConfig(Serializable):
     desc: str = Message.Description.default
-    pos: list[int] = [0, 0, 0]
+    pos: List[int] = [0, 0, 0]
     dim: int = 0
-    rotation: list[int] = [0, 0]
-    actions: list[str] = []
+    rotation: List[int] = [0, 0]
+    actions: List[str] = []
 
 
 class Bot:
