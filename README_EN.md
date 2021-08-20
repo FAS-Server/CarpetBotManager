@@ -1,4 +1,4 @@
-# FAS Bot manager
+# Carpet Bot manager
 
 [中文](README.md) | **English**
 

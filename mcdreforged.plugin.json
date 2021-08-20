@@ -9,7 +9,7 @@
     "author": [
         "YehowahLiu"
     ],
-    "link": "https://github.com/FAS-Server/BotManager",
+    "link": "https://github.com/FAS-Server/CarpetBotManager",
     "dependencies": {
         "mcdreforged": ">=2.0.0",
         "minecraft_data_api": ">=1.4.0"
