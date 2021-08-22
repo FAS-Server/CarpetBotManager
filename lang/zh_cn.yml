@@ -6,9 +6,9 @@ carpet_bot_manager.help.general: |
   §7{prefix} info §b<bot>§r 查询bot信息
   §7{prefix} desc §b<bot> §d<描述信息>§r 更改 bot 描述
   §7{prefix} spawn §b<bot>§r 召唤 bot
-  §7{prefix} kill §b<bot>§r 下线 bot
+  §7{prefix} kill §b<bot>§r §e下线§r bot
   §7{prefix} action §b<bot>§r 管理bot动作
-  §7{prefix} del §b<bot>§r 删除 bot
+  §7{prefix} del §b<bot>§r §c删除§r bot
   §7{prefix2} §b<bot>§r spawn §7[<位置信息>]§r 添加 bot
   §7{prefix2} §b<bot>§r §e<动作>§r 为 bot 添加动作
   §a[参数信息]§r
@@ -17,18 +17,11 @@ carpet_bot_manager.help.general: |
   §e<动作>§r 可为 attack|use|jump|kill 等/player指令的形式, 详见carpet相关指令
   §a[提示]§r
   可使用原/player指令来补全信息, 然后将/替换为!!以添加bot或添加bot动作
-  §a[示例]§r
-  {prefix2} test spawn 添加名为test的假人, 将根据配置自动添加前后缀
-  {prefix2} bot_test jump once 为假人bot_test添加跳跃一次的动作
-  {prefix} spawn bot_test 召唤假人bot_test
-  {prefix} action bot_test exec 让假人bot_test执行动作, 如果未被召唤则先进行召唤
-  {prefix} kill bot_test 让假人bot_test下线
-  {prefix} del bot_test 删除假人bot_test
 carpet_bot_manager.help.summary: 管理 carpet 假人
 carpet_bot_manager.help.action: |
   §7{prefix} action§r 显示这条帮助
-  §7{prefix} action <bot>§r 列出该假人所有动作
-  §7{prefix} action <bot> clear§r 清空假人动作
+  §7{prefix} action §b<bot>§r 列出该假人所有动作
+  §7{prefix} action §b<bot>§7 clear§r 清空假人动作
   如需添加假人动作, 请使用{prefix2}指令
 carpet_bot_manager.help.unfinished_function: 未完工, 快去催作者写
 
@@ -45,29 +38,29 @@ carpet_bot_manager.command.spawn_by_console: 后台不可召唤bot!
 carpet_bot_manager.click_to_fill: "点击以填入§7{0}§r"
 
 carpet_bot_manager.description.title: 描述信息
-carpet_bot_manager.description.changed: "{bot}的描述信息已被更新为{desc}"
+carpet_bot_manager.description.changed: "§b{bot}§r的描述信息已被更新为{desc}"
 
 carpet_bot_manager.bot_list.title: ==== 可用假人列表 ====
 carpet_bot_manager.bot_list.next_page: 下一页
 carpet_bot_manager.bot_list.prev_page: 上一页
 carpet_bot_manager.bot_list.empty: 这里空荡荡的~
 carpet_bot_manager.bot_list.no_more_page: 抵达了世界尽头~
-carpet_bot_manager.bot_list.deleted: "已删除假人{0}"
-carpet_bot_manager.bot_list.pre_spawn: "召唤假人{0}中~"
-carpet_bot_manager.bot_list.pre_kill: "清除假人{0}中~"
+carpet_bot_manager.bot_list.deleted: "已§c删除§r假人§b{0}§r"
+carpet_bot_manager.bot_list.pre_spawn: "召唤假人§b{0}§r中~"
+carpet_bot_manager.bot_list.pre_kill: "§e下线§r假人§b{0}§r中~"
 
 carpet_bot_manager.button.spawn: 点击上线
-carpet_bot_manager.button.kill: 点击下线
-carpet_bot_manager.button.exec: 点击执行预设动作
-carpet_bot_manager.button.delete: 点击删除
-carpet_bot_manager.button.spawn_exec: 点击上线并执行预设动作
+carpet_bot_manager.button.kill: 点击§e下线§r
+carpet_bot_manager.button.exec: 点击§9执行预设动作§r
+carpet_bot_manager.button.delete: 点击§c删除§r
+carpet_bot_manager.button.spawn_exec: 点击上线并§9执行预设动作§r
 carpet_bot_manager.button.action_add: 点击添加动作
-carpet_bot_manager.button.action_clear: 点击清空动作
+carpet_bot_manager.button.action_clear: 点击§c清空§r动作
 carpet_bot_manager.button.edit: 点击修改
 
 carpet_bot_manager.action.title: 预设动作列表
-carpet_bot_manager.action.added: "已为假人{bot}的添加动作{action}!"
-carpet_bot_manager.action.cleared: "假人{0}的动作已被清空!"
-carpet_bot_manager.action.empty: "假人{0}无预设动作!"
-carpet_bot_manager.action.executing: 执行预设动作中~
+carpet_bot_manager.action.added: "已为假人§b{bot}§r的添加动作{action}!"
+carpet_bot_manager.action.cleared: "假人§b{0}§r的动作已被清空!"
+carpet_bot_manager.action.empty: "假人§b{0}§r无预设动作!"
+carpet_bot_manager.action.executing: §9执行预设动作§r中~
 carpet_bot_manager.action.execute_done: 完工力(•̀ω•́)
