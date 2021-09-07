@@ -9,6 +9,7 @@
     "author": [
         "YehowahLiu"
     ],
+    "entrypoint": "carpet_bot_manager.entry",
     "link": "https://github.com/FAS-Server/CarpetBotManager",
     "dependencies": {
         "mcdreforged": ">=2.1.2",
