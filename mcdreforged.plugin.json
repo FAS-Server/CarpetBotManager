@@ -11,7 +11,7 @@
     ],
     "link": "https://github.com/FAS-Server/CarpetBotManager",
     "dependencies": {
-        "mcdreforged": ">=2.0.0",
+        "mcdreforged": ">=2.1.2",
         "minecraft_data_api": ">=1.4.0"
     },
     "resources": [

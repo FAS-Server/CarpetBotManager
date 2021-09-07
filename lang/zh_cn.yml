@@ -1,66 +1,73 @@
-carpet_bot_manager.help.general: |
-  ---- {name} v{version} ----
-  §a[命令格式]§r
-  §7{prefix}§r 显示帮助信息
-  §7{prefix} list §7[<页码>]§r 列出所有bot
-  §7{prefix} info §b<bot>§r 查询bot信息
-  §7{prefix} desc §b<bot> §d<描述信息>§r 更改 bot 描述
-  §7{prefix} spawn §b<bot>§r 召唤 bot
-  §7{prefix} kill §b<bot>§r §e下线§r bot
-  §7{prefix} action §b<bot>§r 管理bot动作
-  §7{prefix} del §b<bot>§r §c删除§r bot
-  §7{prefix2} §b<bot>§r spawn §7[<位置信息>]§r 添加 bot
-  §7{prefix2} §b<bot>§r §e<动作>§r 为 bot 添加动作
-  §a[参数信息]§r
-  §b<bot>§r 假人的名称
-  §7<位置信息>§r 为 x坐标 y坐标 z坐标 facing x旋转 y旋转 in 维度id 的形式
-  §e<动作>§r 可为 attack|use|jump|kill 等/player指令的形式, 详见carpet相关指令
-  §a[提示]§r
-  可使用原/player指令来补全信息, 然后将/替换为!!以添加bot或添加bot动作
-carpet_bot_manager.help.summary: 管理 carpet 假人
-carpet_bot_manager.help.action: |
-  §7{prefix} action§r 显示这条帮助
-  §7{prefix} action §b<bot>§r 列出该假人所有动作
-  §7{prefix} action §b<bot>§7 clear§r 清空假人动作
-  如需添加假人动作, 请使用{prefix2}指令
-carpet_bot_manager.help.unfinished_function: 未完工, 快去催作者写
+carpet_bot_manager:
+  help:
+    general: |
+      ---- {name} v{version} ----
+      §a[命令格式]§r
+      §7{prefix}§r 显示帮助信息
+      §7{prefix} list §7[<页码>]§r 列出所有bot
+      §7{prefix} info §b<bot>§r 查询bot信息
+      §7{prefix} desc §b<bot> §d<描述信息>§r 更改 bot 描述
+      §7{prefix} spawn §b<bot>§r 召唤 bot
+      §7{prefix} kill §b<bot>§r §e下线§r bot
+      §7{prefix} action §b<bot>§r 管理bot动作
+      §7{prefix} del §b<bot>§r §c删除§r bot
+      §7{prefix2} §b<bot>§r spawn §7[<位置信息>]§r 添加 bot
+      §7{prefix2} §b<bot>§r §e<动作>§r 为 bot 添加动作
+      §a[参数信息]§r
+      §b<bot>§r 假人的名称
+      §7<位置信息>§r 为 x坐标 y坐标 z坐标 facing x旋转 y旋转 in 维度id 的形式
+      §e<动作>§r 可为 attack|use|jump|kill 等/player指令的形式, 详见carpet相关指令
+      §a[提示]§r
+      可使用原/player指令来补全信息, 然后将/替换为!!以添加bot或添加bot动作
+    summary: 管理 carpet 假人
+    action: |
+      §7{prefix} action§r 显示这条帮助
+      §7{prefix} action §b<bot>§r 列出该假人所有动作
+      §7{prefix} action §b<bot>§7 clear§r 清空假人动作
+      如需添加假人动作, 请使用{prefix2}指令
+    unfinished_function: 未完工, 快去催作者写
 
-carpet_bot_manager.command.unknown_argument: 未知的指令! 点此查看帮助
-carpet_bot_manager.command.unknown_bot: 该假人不存在! 点此查看假人列表
-carpet_bot_manager.command.duplicated_bot: 该假人已存在!
-carpet_bot_manager.command.bot_name_required: 未提供假人名称! 点击查看假人列表
-carpet_bot_manager.command.unfinished: 不完整的指令! 点此查看帮助
-carpet_bot_manager.command.add_bot_by_console_no_detail: 运维鬼才请告诉我添加bot的位置= =
-carpet_bot_manager.command.wrong_action: 要添加的动作不正确!
-carpet_bot_manager.command.action_too_much: 动作列表已达上限!
-carpet_bot_manager.command.spawn_by_console: 后台不可召唤bot!
+  command:
+    unknown_argument: 未知的指令! 点此查看帮助
+    unknown_bot: 该假人不存在! 点此查看假人列表
+    duplicated_bot: 该假人已存在!
+    bot_name_required: 未提供假人名称! 点击查看假人列表
+    unfinished: 不完整的指令! 点此查看帮助
+    add_bot_by_console_no_detail: 运维鬼才请告诉我添加bot的位置= =
+    wrong_action: 要添加的动作不正确!
+    action_too_much: 动作列表已达上限!
+    spawn_by_console: 后台不可召唤bot!
 
-carpet_bot_manager.click_to_fill: "点击以填入§7{0}§r"
+  click_to_fill: "点击以填入§7{0}§r"
 
-carpet_bot_manager.description.title: 描述信息
-carpet_bot_manager.description.changed: "§b{bot}§r的描述信息已被更新为{desc}"
+  description:
+    title: 描述信息
+    changed: "§b{bot}§r的描述信息已被更新为{desc}"
 
-carpet_bot_manager.bot_list.title: ==== 可用假人列表 ====
-carpet_bot_manager.bot_list.next_page: 下一页
-carpet_bot_manager.bot_list.prev_page: 上一页
-carpet_bot_manager.bot_list.empty: 这里空荡荡的~
-carpet_bot_manager.bot_list.no_more_page: 抵达了世界尽头~
-carpet_bot_manager.bot_list.deleted: "已§c删除§r假人§b{0}§r"
-carpet_bot_manager.bot_list.pre_spawn: "召唤假人§b{0}§r中~"
-carpet_bot_manager.bot_list.pre_kill: "§e下线§r假人§b{0}§r中~"
+  bot_list:
+    title: ==== 可用假人列表 ====
+    next_page: 下一页
+    prev_page: 上一页
+    empty: 这里空荡荡的~
+    no_more_page: 抵达了世界尽头~
+    deleted: "已§c删除§r假人§b{0}§r"
+    pre_spawn: "召唤假人§b{0}§r中~"
+    pre_kill: "§e下线§r假人§b{0}§r中~"
 
-carpet_bot_manager.button.spawn: 点击上线
-carpet_bot_manager.button.kill: 点击§e下线§r
-carpet_bot_manager.button.exec: 点击§9执行预设动作§r
-carpet_bot_manager.button.delete: 点击§c删除§r
-carpet_bot_manager.button.spawn_exec: 点击上线并§9执行预设动作§r
-carpet_bot_manager.button.action_add: 点击添加动作
-carpet_bot_manager.button.action_clear: 点击§c清空§r动作
-carpet_bot_manager.button.edit: 点击修改
+  button:
+    spawn: 点击上线
+    kill: 点击§e下线§r
+    exec: 点击§9执行预设动作§r
+    delete: 点击§c删除§r
+    spawn_exec: 点击上线并§9执行预设动作§r
+    action_add: 点击添加动作
+    action_clear: 点击§c清空§r动作
+    edit: 点击修改
 
-carpet_bot_manager.action.title: 预设动作列表
-carpet_bot_manager.action.added: "已为假人§b{bot}§r的添加动作{action}!"
-carpet_bot_manager.action.cleared: "假人§b{0}§r的动作已被清空!"
-carpet_bot_manager.action.empty: "假人§b{0}§r无预设动作!"
-carpet_bot_manager.action.executing: §9执行预设动作§r中~
-carpet_bot_manager.action.execute_done: 完工力(•̀ω•́)
+  action:
+    title: 预设动作列表
+    added: "已为假人§b{bot}§r的添加动作{action}!"
+    cleared: "假人§b{0}§r的动作已被清空!"
+    empty: "假人§b{0}§r无预设动作!"
+    executing: §9执行预设动作§r中~
+    execute_done: 完工力(•̀ω•́)

@@ -1,66 +1,73 @@
-carpet_bot_manager.help.general: |
-  ---- {name} v{version} ----
-  §a[Commands]§r
-  §7{prefix}§r Display this message
-  §7{prefix} list §7[<page>]§r List out the bots
-  §7{prefix} info §b<bot>§r Query the bot info
-  §7{prefix} desc §b<bot> §d<desc>§r Edit description of bots
-  §7{prefix} spawn §b<bot>§r Spawn the bot
-  §7{prefix} kill §b<bot>§r §eKick§r out the bot
-  §7{prefix} action §b<bot>§r Manage the bot actions
-  §7{prefix} del §b<bot>§r Delete the bot
-  §7{prefix2} §b<bot>§r spawn §7[<position>]§r Add a bot
-  §7{prefix2} §b<bot>§r §e<action>§r Add action for the bot
-  §a[Arguments]§r
-  §b<bot>§r Name of the bot
-  §7<position>§r Should abay the format of x y z facing x y in dimension
-  §e<action>§r should samiliar to /player command such as attack|use|jump|kill
-  §a[Tips]§r
-  Use carpet mod's /player command, and replace the prefix with !! to add bot & action
-carpet_bot_manager.help.summary: Manage the carpet bot
-carpet_bot_manager.help.action: |
-  §7{prefix} action§r Display this message
-  §7{prefix} action §b<bot>§r List out the bot actions
-  §7{prefix} action §b<bot>§7 clear§r Clear the bot actions
-  For adding bot & action, use command {prefix2}
-carpet_bot_manager.help.unfinished_function: Under construction
+carpet_bot_manager:
+  help:
+    general: |
+      ---- {name} v{version} ----
+      §a[Commands]§r
+      §7{prefix}§r Display this message
+      §7{prefix} list §7[<page>]§r List out the bots
+      §7{prefix} info §b<bot>§r Query the bot info
+      §7{prefix} desc §b<bot> §d<desc>§r Edit description of bots
+      §7{prefix} spawn §b<bot>§r Spawn the bot
+      §7{prefix} kill §b<bot>§r §eKick§r out the bot
+      §7{prefix} action §b<bot>§r Manage the bot actions
+      §7{prefix} del §b<bot>§r Delete the bot
+      §7{prefix2} §b<bot>§r spawn §7[<position>]§r Add a bot
+      §7{prefix2} §b<bot>§r §e<action>§r Add action for the bot
+      §a[Arguments]§r
+      §b<bot>§r Name of the bot
+      §7<position>§r Should abay the format of x y z facing x y in dimension
+      §e<action>§r should samiliar to /player command such as attack|use|jump|kill
+      §a[Tips]§r
+      Use carpet mod's /player command, and replace the prefix with !! to add bot & action
+    summary: Manage the carpet bot
+    action: |
+      §7{prefix} action§r Display this message
+      §7{prefix} action §b<bot>§r List out the bot actions
+      §7{prefix} action §b<bot>§7 clear§r Clear the bot actions
+      For adding bot & action, use command {prefix2}
+    unfinished_function: Under construction
 
-carpet_bot_manager.command.unknown_argument: Unknown argument! Click to show help
-carpet_bot_manager.command.unknown_bot: Unknown bot! Click to show bot list
-carpet_bot_manager.command.duplicated_bot: Bot Already Existed!
-carpet_bot_manager.command.bot_name_required: Bot name required! Click to show bot list
-carpet_bot_manager.command.unfinished: Un completed command! Click to show help
-carpet_bot_manager.command.add_bot_by_console_no_detail: The man behind console, we can't tell out where you are
-carpet_bot_manager.command.wrong_action: Wrong action!
-carpet_bot_manager.command.action_too_much: Reach the limit of action!
-carpet_bot_manager.command.spawn_by_console: Cann't spawn bot by console!
+  command:
+    unknown_argument: Unknown argument! Click to show help
+    unknown_bot: Unknown bot! Click to show bot list
+    duplicated_bot: Bot Already Existed!
+    bot_name_required: Bot name required! Click to show bot list
+    unfinished: Un completed command! Click to show help
+    add_bot_by_console_no_detail: The man behind console, we can't tell out where you are
+    wrong_action: Wrong action!
+    action_too_much: Reach the limit of action!
+    spawn_by_console: Cann't spawn bot by console!
 
-carpet_bot_manager.click_to_fill: "Click to fill §7{0}§r"
+  click_to_fill: "Click to fill §7{0}§r"
 
-carpet_bot_manager.description.title: Description
-carpet_bot_manager.description.changed: "§b{bo§rt} 's description has been updated to {desc}"
+  description:
+    title: Description
+    changed: "§b{bo§rt} 's description has been updated to {desc}"
 
-carpet_bot_manager.bot_list.title: ==== Avaliable bots ====
-carpet_bot_manager.bot_list.next_page: Next Page
-carpet_bot_manager.bot_list.prev_page: Prev Page
-carpet_bot_manager.bot_list.empty: Oh, it's void!
-carpet_bot_manager.bot_list.no_more_page: The world border
-carpet_bot_manager.bot_list.deleted: "Bot §b{0}§r has been deleted"
-carpet_bot_manager.bot_list.pre_spawn: "Spawning bot §b{0}§r ~"
-carpet_bot_manager.bot_list.pre_kill: "§eKicking§r bot §b{0}§r ~"
+  bot_list:
+    title: ==== Avaliable bots ====
+    next_page: Next Page
+    prev_page: Prev Page
+    empty: Oh, it's void!
+    no_more_page: The world border
+    deleted: "Bot §b{0}§r has been deleted"
+    pre_spawn: "Spawning bot §b{0}§r ~"
+    pre_kill: "§eKicking§r bot §b{0}§r ~"
 
-carpet_bot_manager.button.spawn: Click to spawn
-carpet_bot_manager.button.kill: Click to §ekick§r
-carpet_bot_manager.button.exec: Click to §9execute§r the preset actions
-carpet_bot_manager.button.delete: Click to DELETE
-carpet_bot_manager.button.spawn_exec: Click to spawn & execute the preset actions
-carpet_bot_manager.button.action_add: Click to add action
-carpet_bot_manager.button.action_clear: Click to clear actions
-carpet_bot_manager.button.edit: Click to edit
+  button:
+    spawn: Click to spawn
+    kill: Click to §ekick§r
+    exec: Click to §9execute§r the preset actions
+    delete: Click to DELETE
+    spawn_exec: Click to spawn & execute the preset actions
+    action_add: Click to add action
+    action_clear: Click to clear actions
+    edit: Click to edit
 
-carpet_bot_manager.action.title: Preset Actions
-carpet_bot_manager.action.added: "Added action {actions} into bot §b{bo§rt}!"
-carpet_bot_manager.action.cleared: "Clear the action of bot §b{0}§r"
-carpet_bot_manager.action.empty: "Bot §b{0}§r has no preset actions!"
-carpet_bot_manager.action.executing: §9Executing actions§9 ~
-carpet_bot_manager.action.execute_done: Execute Done (•̀ω•́)
+  action:
+    title: Preset Actions
+    added: "Added action {actions} into bot §b{bo§rt}!"
+    cleared: "Clear the action of bot §b{0}§r"
+    empty: "Bot §b{0}§r has no preset actions!"
+    executing: §9Executing actions§9 ~
+    execute_done: Execute Done (•̀ω•́)
