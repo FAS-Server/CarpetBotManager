@@ -88,7 +88,7 @@ class BotManager:
                 self.config.bots[bot_name] = bot_conf
                 self.__debug(f'save up config:{str(self.config.serialize())}')
                 self.sever.save_config_simple(config=self.config)
-                self.bots[bot_name] = Bot(bot_name, bot_conf, src.get_server())
+                self.setup()
 
     def del_bot(self, src: CommandSource, bot_name: str):
         bot_name = bot_name.lower()
