@@ -108,41 +108,30 @@ class Bot:
             src.reply(tr('action.empty', self.name))
 
     def info(self, src: CommandSource, with_detail: Optional[bool] = True):
-        bot_operation = {
-            True: RTextList(
-                RText('[↓]', color=RColor.yellow).h(tr('button.kill')).c(
-                    RAction.run_command, f'{constants.Prefix} kill {self.name}'
-                ),
-                ' ',
-                RText('[▶]', color=RColor.blue).h(tr('button.exec')).c(
-                    RAction.run_command, f'{constants.Prefix} action {self.name} exec'
-                ),
-                ' ',
-                RText('[x]', color=RColor.red).h(tr('button.delete')).c(
-                    RAction.suggest_command, f'{constants.Prefix} del {self.name}'
-                )
+        bot_action = RTextList(
+            RText('[↑]', color=RColor.green).h(tr('button.spawn')).c(
+                RAction.run_command, f'{constants.Prefix} spawn {self.name}'
             ),
-            False: RTextList(
-                RText('[↑]', color=RColor.green).h(tr('button.spawn')).c(
-                    RAction.run_command, f'{constants.Prefix} spawn {self.name}'
-                ),
-                ' ',
-                RText('[▶]', color=RColor.blue).h(tr('button.spawn_exec')).c(
-                    RAction.run_command, f'{constants.Prefix} action {self.name} exec'
-                ),
-                ' ',
-                RText('[x]', color=RColor.red).h(tr('button.delete')).c(
-                    RAction.suggest_command, f'{constants.Prefix} del {self.name}'
-                )
+            ' ',
+            RText('[↓]', color=RColor.yellow).h(tr('button.kill')).c(
+                RAction.run_command, f'{constants.Prefix} kill {self.name}'
+            ),
+            ' ',
+            RText('[▶]', color=RColor.blue).h(tr('button.exec')).c(
+                RAction.run_command, f'{constants.Prefix} action {self.name} exec'
+            ),
+            ' ',
+            RText('[x]', color=RColor.red).h(tr('button.delete')).c(
+                RAction.suggest_command, f'{constants.Prefix} del {self.name}'
             )
-        }
+        )
         info = RTextList(
             RText(self.name, color=constants.bot_name_color[self.online]).c(
                 RAction.run_command, f'{constants.Prefix} info {self.name}'),
             RText(' [{}] @ '.format(self._pos_display)),
             RTextTranslation(constants.dimension_display[str(self.dim)], color=constants.dimension_color[str(self.dim)]),
             ' ',
-            bot_operation.get(self.online)
+            bot_action
         )
         src.reply(info)
         if with_detail:
