@@ -26,7 +26,7 @@ def query_player_info(src: PlayerCommandSource) -> tuple:
 class Config(Serializable):
     debug: bool = False
     bots: Dict[str, BotConfig] = {}
-    name_prefix: str = 'bot_'
+    name_prefix: str = ''
     name_suffix: str = ''
     page_len: int = 15
 
