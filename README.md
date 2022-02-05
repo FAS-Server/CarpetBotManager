@@ -27,9 +27,9 @@
   
     // 控制分页中每页行数
     "page_len": 15,
-    // 是否在生成bot时去除其bot_前缀, 配合carpet-tis-addition使用
-    "removePrefix": true,
-    // 是否在生成bot时去除其_fake后缀, 配合carpet-tis-addition使用
-    "removeSuffix": false
+    // 在生成bot时会添加的前缀, 配合carpet-tis-addition使用
+    "name_prefix": "bot_",
+    // 在生成bot时会添加的后缀, 配合carpet-tis-addition使用
+    "name_suffix": ""
 }
 ```

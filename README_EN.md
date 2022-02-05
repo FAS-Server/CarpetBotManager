@@ -27,9 +27,9 @@ Config: Stored in `config/bot_manager/BotManager.json` as default.
   
     // the number of lines per page, used in list bots
     "page_len": 15,
-    // whether remove the prefix 'bot_', design for carpet-tis-addition
-    "removePrefix": true,
-    // whether remove the suffix '_fake', design for carpet-tis-addition
-    "removeSuffix": false
+    // prefix which will be add before bot name, design for carpet-tis-addition
+    "name_prefix": "bot_",
+    // suffix which will be add after bot name, design for carpet-tis-addition
+    "name_suffix": ""
 }
 ```
