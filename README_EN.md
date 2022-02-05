@@ -1,10 +1,14 @@
 # Carpet Bot manager
 
-![MCDReforged](https://img.shields.io/badge/dynamic/json?label=MCDReforged&query=dependencies.mcdreforged&url=https%3A%2F%2Fraw.githubusercontent.com%2FFAS-Server%2FCarpetBotManager%2Fmaster%2Fmcdreforged.plugin.json&style=plastic) ![license](https://img.shields.io/github/license/FAS-Server/CarpetBotManager) ![build status](https://img.shields.io/github/workflow/status/FAS-Server/CarpetBotManager/CI%20for%20MCDR%20Plugin?label=build&style=plastic) ![Release](https://img.shields.io/github/v/release/FAS-Server/CarpetBotManager?style=plastic) ![total download](https://img.shields.io/github/downloads/FAS-Server/CarpetBotManager/total?label=total%20download&style=plastic)
+[![MCDReforged](https://img.shields.io/badge/dynamic/json?label=MCDReforged&query=dependencies.mcdreforged&url=https%3A%2F%2Fraw.githubusercontent.com%2FFAS-Server%2FCarpetBotManager%2Fmaster%2Fmcdreforged.plugin.json&style=plastic)](https://github.com/Fallen-Breath/MCDReforged)
+[![license](https://img.shields.io/github/license/FAS-Server/CarpetBotManager)](https://github.com/FAS-Server/CarpetBotManager/blob/main/LICENSE)
+[![build status](https://img.shields.io/github/workflow/status/FAS-Server/CarpetBotManager/CI%20for%20MCDR%20Plugin?label=build&style=plastic)](https://github.com/FAS-Server/CarpetBotManager/actions)
+[![Release](https://img.shields.io/github/v/release/FAS-Server/CarpetBotManager?style=plastic)](https://github.com/FAS-Server/CarpetBotManager/releases/latest)
+![total download](https://img.shields.io/github/downloads/FAS-Server/CarpetBotManager/total?label=total%20download&style=plastic)
 
 [中文](README.md) | **English**
 
-> A bot manage plugin for carpet mod, also support prefix and suffix added by carpet-tis-addition
+> A bot manage plugin for carpet mod, also support prefix and suffix added by [carpet-tis-addition](https://github.com/TISUnion/Carpet-TIS-Addition)
 
 After added this plugin, type `!!bot` in game to get help message.
 
