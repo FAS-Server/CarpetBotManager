@@ -1,3 +1,4 @@
+from math import ceil
 from typing import Dict, Optional
 
 from mcdreforged.api.types import PluginServerInterface, CommandSource, PlayerCommandSource
@@ -112,10 +113,15 @@ class BotManager:
         self.bots[bot_name].kill(src)
 
     def list_bots(self, src: CommandSource, page: Optional[int] = 1):
+        """
+        Reply given page of the player list
+        :param src: the CommandSource to reply
+        :param page: page num
+        :return: None
+        """
         page_length = self.config.page_len
-        bot_names = [i for i in self.bots]
-        self.__debug(f'total list size: {len(bot_names)}')
-        max_page = 1 + int(len(bot_names) / page_length)
+        bot_names = self.bots.keys()
+        max_page = ceil(len(bot_names) / page_length)
         if not 1 <= page <= max_page:
             page = 1
         left = (page - 1) * page_length
