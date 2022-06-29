@@ -25,3 +25,7 @@ def on_player_left(server: PluginServerInterface, player: str):
     player = player.lower()
     if bot_manager.check_list(player):
         bot_manager.on_bot_left(player)
+
+
+def on_server_stop(server: PluginServerInterface, server_return_code: int):
+    bot_manager.on_bot_left("")

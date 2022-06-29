@@ -103,7 +103,6 @@ class BotManager:
         src.reply(tr('action.added', bot=bot_name, action=action))
         self.sever.save_config_simple(config=self.config)
 
-
     def spawn_bot(self, src: CommandSource, bot_name: str):
         bot_name = bot_name.lower()
         self.bots[bot_name].spawn(src)
@@ -116,7 +115,7 @@ class BotManager:
         page_length = self.config.page_len
         bot_names = [i for i in self.bots]
         self.__debug(f'total list size: {len(bot_names)}')
-        max_page = 1 + int(len(bot_names)/page_length)
+        max_page = 1 + int(len(bot_names) / page_length)
         if not 1 <= page <= max_page:
             page = 1
         left = (page - 1) * page_length
@@ -137,7 +136,7 @@ class BotManager:
         if page <= 1:
             left_link = RText('<<<', color=link_color[False]).h(tr('bot_list.no_more_page')[::-1])
         else:
-            left_link = RText('<<<', color=link_color[True]).h(tr('bot_list.prev_page'))\
+            left_link = RText('<<<', color=link_color[True]).h(tr('bot_list.prev_page')) \
                 .c(RAction.run_command, Prefix + ' list ' + str(page - 1))
 
         right_link: RText
@@ -167,7 +166,7 @@ class BotManager:
         src.reply(tr('action.cleared', bot=bot_name))
         self.sever.save_config_simple(config=self.config)
 
-    def check_list(self, player: str,  for_spawn: Optional[bool] = False) -> bool:
+    def check_list(self, player: str, for_spawn: Optional[bool] = False) -> bool:
         self.__debug('check_list@bot_manager')
         player = player.lower()
         if not for_spawn:
@@ -182,7 +181,15 @@ class BotManager:
         bot = self.bots[player]
         bot.online = True
 
-    def on_bot_left(self, player):
+    def on_bot_left(self, player: str):
+        """
+        Sync the bot state when player left
+        :param player: the player name, empty for server stop
+        :return:
+        """
+        if player == "":
+            for bot in self.bots.values():
+                bot.online = False
         player = player.lower()
         bot = self.bots[player]
         bot.online = False
