@@ -143,14 +143,14 @@ class BotManager:
             left_link = RText('<<<', color=link_color[False]).h(tr('bot_list.no_more_page')[::-1])
         else:
             left_link = RText('<<<', color=link_color[True]).h(tr('bot_list.prev_page')) \
-                .c(RAction.run_command, Prefix + ' list ' + str(page - 1))
+                .c(RAction.suggest_command, Prefix + ' list ' + str(page - 1))
 
         right_link: RText
         if page >= max_page:
             right_link = RText('>>>', color=link_color[False]).h(tr('bot_list.no_more_page'))
         else:
             right_link = RText('>>>', color=link_color[True]).h(tr('bot_list.next_page')) \
-                .c(RAction.run_command, Prefix + ' list ' + str(page + 1))
+                .c(RAction.suggest_command, Prefix + ' list ' + str(page + 1))
 
         footer = RTextList(
             left_link,
