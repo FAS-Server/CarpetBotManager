@@ -1,6 +1,6 @@
 {
     "id": "carpet_bot_manager",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "name": "Carpet Bot Manager",
     "description": {
         "en_us": "A carpet bot manage plugin, able to spawn bot and make it execute actions",
