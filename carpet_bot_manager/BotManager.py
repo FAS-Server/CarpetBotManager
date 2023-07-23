@@ -196,6 +196,7 @@ class BotManager:
         if player == "":
             for bot in self.bots.values():
                 bot.online = False
+            return
         player = player.lower()
         bot = self.bots[player]
         bot.online = False
