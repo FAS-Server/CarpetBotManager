@@ -120,7 +120,7 @@ class BotManager:
         :return: None
         """
         page_length = self.config.page_len
-        bot_names = self.bots.keys()
+        bot_names = list(self.bots.keys())
         max_page = ceil(len(bot_names) / page_length)
         if not 1 <= page <= max_page:
             page = 1
