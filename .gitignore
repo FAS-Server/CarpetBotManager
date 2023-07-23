@@ -2,4 +2,4 @@ minecraft_data_api/
 .idea/
 .vscode/
 carpet_bot_manager/__pycache__/
-*.mcdr
+*.pyz
