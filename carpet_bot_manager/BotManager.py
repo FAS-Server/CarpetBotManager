@@ -5,6 +5,7 @@ from mcdreforged.api.types import PluginServerInterface, CommandSource, PlayerCo
 from mcdreforged.api.decorator import new_thread
 from mcdreforged.api.rtext import RTextList, RText, RColor, RAction
 from mcdreforged.api.utils import Serializable
+from carpet_bot_manager import constants
 
 from carpet_bot_manager.constants import Prefix
 from carpet_bot_manager.bot import Bot, BotConfig
@@ -71,25 +72,30 @@ class BotManager:
                 bot_instance.online = True
 
     @new_thread('bot#add_bot')
-    def add_bot(self, src: CommandSource, bot_name: str, position: Optional[str] = None):
+    def add_bot(self, src: CommandSource, bot_name: str, ctx: Optional[dict] = None):
         self.__debug('add_bot@bot_manager')
         bot_name = bot_name.lower()
-        if position is not None:
-            src.reply(tr('help.unfinished_function'))  # TODO 接收玩家指定的位置参数
-        else:
+        bot_name = self.config.name_prefix + bot_name + self.config.name_suffix
+        self.__debug('do the bot add')
+        conf = {}
+        if ctx is None:
             if not isinstance(src, PlayerCommandSource):
                 src.reply(tr('command.add_bot_by_console_no_detail'))
-            else:
-                bot_name = self.config.name_prefix + bot_name + self.config.name_suffix
-                self.__debug('do the bot add')
-                conf = {}
-                self.__debug('init the bot conf')
-                conf['pos'], conf['rotation'], conf['dim'] = query_player_info(src)
-                bot_conf = BotConfig.deserialize(conf)
-                self.config.bots[bot_name] = bot_conf
-                self.__debug(f'save up config:{str(self.config.serialize())}')
-                self.sever.save_config_simple(config=self.config)
-                self.setup()
+                return
+            self.__debug('init the bot conf')
+            conf['pos'], conf['rotation'], conf['dim'] = query_player_info(src)
+        else:
+            if 'x' in ctx:
+                conf['pos'] = [ctx['x'], ctx['y'], ctx['z']]
+            if 'rotation' in ctx:
+                conf['rotation'] = [ctx['pitch'], ctx['yaw']]
+            if 'dim' in ctx:
+                conf['dim'] = constants.dimension_map[ctx['dim']]
+        bot_conf = BotConfig.deserialize(conf)
+        self.config.bots[bot_name] = bot_conf
+        self.__debug(f'save up config:{str(self.config.serialize())}')
+        self.sever.save_config_simple(config=self.config)
+        self.setup()
 
     def del_bot(self, src: CommandSource, bot_name: str):
         bot_name = bot_name.lower()

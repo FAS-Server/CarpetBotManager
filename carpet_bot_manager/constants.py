@@ -11,6 +11,18 @@ bot_name_color = {
     False: RColor.gray
 }
 
+dimension_map = {
+    'minecraft:overworld': 0,
+    'minecraft:the_nether': -1,
+    'minecraft:the_end': 1,
+    'overworld': 0,
+    'the_nether': -1,
+    'the_end': 1,
+    '0': 0,
+    '-1': -1,
+    '1': 1
+}
+
 dimension_display = {
     '0': 'createWorld.customize.preset.overworld',
     '-1': 'advancements.nether.root.title',
