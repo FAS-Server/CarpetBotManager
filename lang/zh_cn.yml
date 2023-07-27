@@ -37,6 +37,7 @@ carpet_bot_manager:
     wrong_action: 要添加的动作不正确!
     action_too_much: 动作列表已达上限!
     spawn_by_console: 后台不可召唤bot!
+    unknown_dimension: 未知的维度!
 
   click_to_fill: "点击以填入§7{0}§r"
 

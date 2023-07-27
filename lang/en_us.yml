@@ -15,8 +15,8 @@ carpet_bot_manager:
       §7{prefix2} §b<bot>§r §e<action>§r Add action for the bot
       §a[Arguments]§r
       §b<bot>§r Name of the bot
-      §7<position>§r Should abay the format of x y z facing x y in dimension
-      §e<action>§r should samiliar to /player command such as attack|use|jump|kill
+      §7<position>§r Should obey the format of x y z facing x y in dimension
+      §e<action>§r should similar to /player command such as attack|use|jump|kill
       §a[Tips]§r
       Use carpet mod's /player command, and replace the prefix with !! to add bot & action
     summary: Manage the carpet bot
@@ -36,7 +36,8 @@ carpet_bot_manager:
     add_bot_by_console_no_detail: The man behind console, we can't tell out where you are
     wrong_action: Wrong action!
     action_too_much: Reach the limit of action!
-    spawn_by_console: Cann't spawn bot by console!
+    spawn_by_console: Cannot spawn bot by console!
+    unknown_dimension: Unknown dimension!
 
   click_to_fill: "Click to fill §7{0}§r"
 
@@ -45,7 +46,7 @@ carpet_bot_manager:
     changed: "§b{bo§rt} 's description has been updated to {desc}"
 
   bot_list:
-    title: ==== Avaliable bots ====
+    title: ==== Available bots ====
     next_page: Next Page
     prev_page: Prev Page
     empty: Oh, it's void!
@@ -56,7 +57,7 @@ carpet_bot_manager:
 
   button:
     spawn: Click to spawn
-    kill: Click to §ekick§r
+    kill: Click to §e kick§r
     exec: Click to §9execute§r the preset actions
     delete: Click to DELETE
     spawn_exec: Click to spawn & execute the preset actions
