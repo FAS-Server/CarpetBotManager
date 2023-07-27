@@ -1,6 +1,6 @@
 {
     "id": "carpet_bot_manager",
-    "version": "0.3.2",
+    "version": "0.3.3-beta1",
     "name": "Carpet Bot Manager",
     "description": {
         "en_us": "A carpet bot manage plugin, able to spawn bot and make it execute actions",
@@ -12,7 +12,7 @@
     "entrypoint": "carpet_bot_manager.entry",
     "link": "https://github.com/FAS-Server/CarpetBotManager",
     "dependencies": {
-        "mcdreforged": ">=2.1.2",
+        "mcdreforged": ">=2.6.0",
         "minecraft_data_api": ">=1.4.0"
     },
     "resources": [
