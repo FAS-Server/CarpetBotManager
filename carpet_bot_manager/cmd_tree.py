@@ -47,7 +47,7 @@ def register_command(server: PluginServerInterface, manager: BotManager):
             lambda src: tr('command.unknown_bot')
         ).suggests(lambda: manager.bots_in_list)
     def get_actions_node(name: str):
-        GreedyText(name).requires(
+        return GreedyText(name).requires(
                 lambda src, ctx: re.match(constants.action_pattern, ctx[name]) is not None,
                 lambda src: src.reply(tr('command.wrong_action'))
             ).requires(
@@ -68,6 +68,7 @@ def register_command(server: PluginServerInterface, manager: BotManager):
     builder.arg('yaw', Float)
     builder.arg('page', Integer)
     builder.arg('info', GreedyText)
+    builder.arg('bot', Text)
 
     builder.register(server)
     server.register_help_message(constants.Prefix, tr('help.summary'))
