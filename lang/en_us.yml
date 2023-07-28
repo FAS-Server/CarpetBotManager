@@ -54,6 +54,7 @@ carpet_bot_manager:
     deleted: "Bot §b{0}§r has been deleted"
     pre_spawn: "Spawning bot §b{0}§r ~"
     pre_kill: "§eKicking§r bot §b{0}§r ~"
+    added: "Successfully added bot§b{0}§r"
 
   button:
     spawn: Click to spawn

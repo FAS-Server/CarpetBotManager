@@ -96,6 +96,7 @@ class BotManager:
         self.__debug(f'save up config:{str(self.config.serialize())}')
         self.sever.save_config_simple(config=self.config)
         self.setup()
+        src.reply(tr('bot_list.added', bot_name))
 
     def del_bot(self, src: CommandSource, bot_name: str):
         bot_name = bot_name.lower()

@@ -54,6 +54,7 @@ carpet_bot_manager:
     deleted: "已§c删除§r假人§b{0}§r"
     pre_spawn: "召唤假人§b{0}§r中~"
     pre_kill: "§e下线§r假人§b{0}§r中~"
+    added: 成功添加假人§b{0}§r
 
   button:
     spawn: 点击上线
