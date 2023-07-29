@@ -23,7 +23,7 @@ def register_command(server: PluginServerInterface, manager: BotManager):
     builder.command('!!player <bot> spawn at <x> <y> <z>', lambda src, ctx: manager.add_bot(src, ctx['bot'], ctx))
     builder.command('!!player <bot> spawn at <x> <y> <z> facing <pitch> <yaw>', lambda src, ctx: manager.add_bot(src, ctx['bot'], ctx))
     builder.command('!!player <bot> spawn at <x> <y> <z> facing <pitch> <yaw> in <dim>', lambda src, ctx: manager.add_bot(src, ctx['bot'], ctx))
-    builder.command('!!player <ebot> <action>', lambda src, ctx: manager.add_action(src, ctx['ebot'], ctx['action']))
+    builder.command('!!player <bot> <action>', lambda src, ctx: manager.add_action(src, ctx['bot'], ctx['action']))
 
     builder.command("!!bot", lambda src: src.reply(general_help))
     builder.command("!!bot list", lambda src: manager.list_bots(src))
@@ -48,15 +48,21 @@ def register_command(server: PluginServerInterface, manager: BotManager):
         ).suggests(lambda: manager.bots_in_list)
     def get_actions_node(name: str):
         return GreedyText(name).requires(
+                lambda src, ctx: manager.check_list(ctx['bot']),
+                lambda src: src.reply(tr('command.unknown_bot'))
+            ).requires(
                 lambda src, ctx: re.match(constants.action_pattern, ctx[name]) is not None,
                 lambda src: src.reply(tr('command.wrong_action'))
             ).requires(
-                lambda src, ctx: manager.check_action_limit(ctx['ebot']),
+                lambda src, ctx: manager.check_action_limit(ctx['bot']),
                 lambda src: src.reply(tr('command.action_too_much'))
             )
     def get_dimension_node(name: str):
         dims = list(constants.dimension_map.keys())
-        return Text(name).requires(lambda _, ctx: ctx[name] in dims, lambda src: src.reply(tr('command.unknown_dimension')))
+        return Text(name).requires(
+                lambda _, ctx: ctx[name] in dims,
+                lambda src: src.reply(tr('command.unknown_dimension'))
+            )
 
     builder.arg('ebot', get_existed_bot_node)
     builder.arg('action', get_actions_node)

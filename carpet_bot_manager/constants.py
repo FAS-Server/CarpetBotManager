@@ -51,10 +51,11 @@ bot_conf_default = {
 }
 
 action_pattern = re.compile(r'^('
-                            r'((use|attack|jump) (once|continuous|(interval \d+)))|'
+                            r'((use|attack|jump|swapHands) (randomly|once|continuous|((after|interval) \d+)))|'
+                            r'(turn (left|right|back))|'
                             r'(move (forward|backward|left|right))|'
                             r'(look (up|down|north|south|east|west|(at -?\d+ \d+ -?\d+)))|'
                             r'(drop(Stack)? (all|continuous|mainhand|offhand|(interval \d+)))|'
-                            r'dismount|kill|(hotbar [1-9])|'
-                            r'(delay %d+)'
+                            r'sneak|unsneak|sprint|unsprint|stop|dismount|kill|(hotbar [1-9])|'
+                            r'(delay \d+)'
                             r')$')
