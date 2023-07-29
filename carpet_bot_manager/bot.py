@@ -1,3 +1,4 @@
+import time
 from typing import List, Optional
 
 from mcdreforged.api.types import ServerInterface, CommandSource, PlayerCommandSource
@@ -102,6 +103,9 @@ class Bot:
         if len(self.actions) > 0:
             for action in self.actions.copy():
                 src.reply('  ' + action)
+                if action.startswith('delay '):
+                    time.sleep(float(action[6:]))
+                    continue
                 self.__server.execute(cmd_prefix + action)
             src.reply(tr('action.execute_done'))
         else:

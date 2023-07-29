@@ -55,5 +55,6 @@ action_pattern = re.compile(r'^('
                             r'(move (forward|backward|left|right))|'
                             r'(look (up|down|north|south|east|west|(at -?\d+ \d+ -?\d+)))|'
                             r'(drop(Stack)? (all|continuous|mainhand|offhand|(interval \d+)))|'
-                            r'dismount|kill|(hotbar [1-9])'
+                            r'dismount|kill|(hotbar [1-9])|'
+                            r'(delay %d+)'
                             r')$')
