@@ -53,4 +53,4 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/v')
       uses: svenstaro/upload-release-action@v2
       with:
-        file: package/*.pyz
+        file: package/CarpetBotManager*
