@@ -41,15 +41,6 @@ dim_convert = {
     1: 'minecraft:the_end'
 }
 
-bot_conf_default = {
-    'pos': [0, 0, 0],
-    'dim': 0,
-    'rotation': [0, 0],
-    'actions': [
-    ],
-    'desc': 'Nothing here'
-}
-
 action_pattern = re.compile(r'^('
                             r'((use|attack|jump|swapHands) (randomly|once|continuous|((after|interval) \d+)))|'
                             r'(turn (left|right|back))|'
